@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --app-bg:
+    radial-gradient(circle at top left, rgba(45, 212, 191, 0.16), transparent 26%),
+    radial-gradient(circle at 84% 10%, rgba(236, 72, 153, 0.14), transparent 18%),
+    linear-gradient(180deg, #050816 0%, #07101d 100%);
+  --panel-bg: linear-gradient(180deg, rgba(15, 23, 42, 0.86), rgba(8, 15, 31, 0.94));
+  --panel-border: rgba(148, 163, 184, 0.16);
+  --panel-shadow: 0 20px 80px rgba(2, 6, 23, 0.5);
+  --app-text: #e2e8f0;
+  --muted-text: #94a3b8;
+  --input-bg: rgba(15, 23, 42, 0.7);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-text: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+html.light {
+  color-scheme: light;
+  --app-bg:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 26%),
+    radial-gradient(circle at 84% 10%, rgba(16, 185, 129, 0.11), transparent 18%),
+    linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  --panel-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(241, 245, 249, 0.95));
+  --panel-border: rgba(15, 23, 42, 0.08);
+  --panel-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+  --app-text: #0f172a;
+  --muted-text: #475569;
+  --input-bg: rgba(255, 255, 255, 0.82);
+  --input-border: rgba(15, 23, 42, 0.1);
+  --input-text: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.78);
+  --card-border: rgba(15, 23, 42, 0.08);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-family: var(--font-body), sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.font-heading {
+  font-family: var(--font-heading), sans-serif;
+}
+
+.glass-panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--panel-shadow);
+  backdrop-filter: blur(18px);
+}
+
+.grid-overlay {
+  background-image: linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+html.light .grid-overlay {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+
+html.light .text-white,
+html.light .text-slate-50,
+html.light .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-200,
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400,
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+html.light .bg-slate-950,
+html.light .bg-slate-950\/50,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-950\/70,
+html.light .bg-white\/5 {
+  background-color: var(--card-bg) !important;
+}
+
+html.light .border-white\/10,
+html.light .border-white\/5,
+html.light .border-slate-800,
+html.light .border-slate-900 {
+  border-color: var(--card-border) !important;
+}
+
+html.light input,
+html.light textarea {
+  background: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border-color: var(--input-border) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #64748b !important;
+}
